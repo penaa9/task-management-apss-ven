@@ -79,7 +79,7 @@ class MyTask extends StatelessWidget {
                             color: appColor.primaryBg,
                             child: const Center(
                                 child: Text(
-                              '200%',
+                              '8%',
                               style: TextStyle(
                                 color: appColor.primaryText,
                               ),
@@ -161,7 +161,7 @@ class MyTask extends StatelessWidget {
                             color: appColor.primaryBg,
                             child: const Center(
                                 child: Text(
-                              '200%',
+                              '78%',
                               style: TextStyle(
                                 color: appColor.primaryText,
                               ),
@@ -242,7 +242,7 @@ class MyTask extends StatelessWidget {
                             color: appColor.primaryBg,
                             child: const Center(
                                 child: Text(
-                              '200%',
+                              '30%',
                               style: TextStyle(
                                 color: appColor.primaryText,
                               ),
@@ -323,7 +323,7 @@ class MyTask extends StatelessWidget {
                             color: appColor.primaryBg,
                             child: const Center(
                                 child: Text(
-                              '200%',
+                              '90%',
                               style: TextStyle(
                                 color: appColor.primaryText,
                               ),

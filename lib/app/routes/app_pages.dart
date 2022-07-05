@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
 
-import '../modules/about/bindings/about_binding.dart';
-import '../modules/about/views/about_view.dart';
 import '../modules/friend/bindings/friend_binding.dart';
 import '../modules/friend/views/friend_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -23,7 +21,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => const HomeView(),
+      page: () =>  HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
@@ -31,24 +29,20 @@ class AppPages {
       page: () => const LoginView(),
       binding: LoginBinding(),
     ),
-    GetPage(
-      name: _Paths.ABOUT,
-      page: () => const AboutView(),
-      binding: AboutBinding(),
-    ),
+  
     GetPage(
       name: _Paths.FRIEND,
-      page: () => const FriendView(),
+      page: () =>  FriendView(),
       binding: FriendBinding(),
     ),
     GetPage(
       name: _Paths.PROFILE,
-      page: () => const ProfileView(),
+      page: () =>  ProfileView(),
       binding: ProfileBinding(),
     ),
     GetPage(
       name: _Paths.TASK,
-      page: () => const TaskView(),
+      page: () =>  TaskView(),
       binding: TaskBinding(),
     ),
   ];

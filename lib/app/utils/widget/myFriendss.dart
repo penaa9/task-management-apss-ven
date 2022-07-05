@@ -68,7 +68,7 @@ class MyFriends extends StatelessWidget {
                         ),
                       ),
                       const Text(
-                        'Ninja Hatori',
+                        'Fitri',
                         style: TextStyle(color: appColor.primaryText),
                       )
                     ],
