@@ -96,16 +96,16 @@ class HomeView extends GetView<HomeController> {
 
                  child: Column(
                         children: [
-                          // start MY TASK
+                             
                           const MyTask(),
-                          // end of MY TASK
+                        
                           !context.isPhone
                               ? Expanded(
                                   child: Row(
                                     children: const [
                                     //extract widget
                                       UpcomingTask(),
-                                      
+
 
                                       MyFriends()
                                     ],
