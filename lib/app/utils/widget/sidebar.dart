@@ -106,14 +106,14 @@ class SideBar extends StatelessWidget {
                       Container(
                         height: 40,
                         width: 100,
-                        decoration: Get.currentRoute == '/friends' ? BoxDecoration(
+                        decoration: Get.currentRoute == '/friend' ? BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12)
                         ):BoxDecoration(),
                         child: Column(
                           children: [
                             Icon(
-                              Get.currentRoute == '/friends' ?
+                              Get.currentRoute == '/friend' ?
                               Icons.class_sharp: Icons.class_outlined, size: 30, color: Colors.grey,),
                            
     
