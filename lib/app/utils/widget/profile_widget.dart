@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:management_taks_apps/app/utils/style/appColor.dart';
 
 
-
+//widget profile video  8
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({
     Key? key,
