@@ -89,31 +89,29 @@ class HomeView extends GetView<HomeController> {
                         ? const EdgeInsets.all(10)
                         : const EdgeInsets.all(0),
                     decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: !context.isPhone
-                            ? BorderRadius.circular(50)
-                              : BorderRadius.circular(30),),
-
-                 child: Column(
-                        children: [
-                             
-                          const MyTask(),
-                        
-                          !context.isPhone
-                              ? Expanded(
-                                  child: Row(
-                                    children: const [
+                      color: Colors.white,
+                      borderRadius: !context.isPhone
+                          ? BorderRadius.circular(50)
+                          : BorderRadius.circular(30),
+                    ),
+                    child: Column(
+                      children: [
+                        const MyTask(),
+                        !context.isPhone
+                            ? Expanded(
+                                child: Row(
+                                  children: const [
                                     //extract widget
-                                      UpcomingTask(),
+                                    UpcomingTask(),
 
-
-                                      MyFriends()
-                                    ],
-                                  ),
-                                )
-                              : const UpcomingTask(),
-                        ],
-                      ),                ),
+                                    MyFriends()
+                                  ],
+                                ),
+                              )
+                            : const UpcomingTask(),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
