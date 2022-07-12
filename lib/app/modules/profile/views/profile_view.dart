@@ -10,6 +10,8 @@ import '../../../utils/widget/sidebar.dart';
 import '../controllers/profile_controller.dart';
 import 'package:management_taks_apps/app/utils/style/appColor.dart';
 
+
+//profile view video 8
 class ProfileView extends GetView<ProfileController> {
   final GlobalKey<ScaffoldState> _drawwerKey = GlobalKey();
   @override
