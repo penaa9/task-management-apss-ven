@@ -35,21 +35,18 @@ class TaskView extends GetView<TaskController> {
                         child: Row(children: [
                           IconButton(
                             onPressed: () {
-
-                            _drawwerKey.currentState!.openDrawer();
-                            
+                              _drawwerKey.currentState!.openDrawer();
                             },
                             icon: Icon(
                               Icons.menu,
                               color: appColor.primaryText,
                             ),
                           ),
-
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
                               Text(
-                                'Task Management',
+                                'My Task',
                                 style: TextStyle(
                                     fontSize: 20, color: appColor.primaryText),
                               ),
@@ -59,37 +56,172 @@ class TaskView extends GetView<TaskController> {
                                       color: appColor.primaryText))
                             ],
                           ),
-                          const SizedBox(width: 45,),
+                          const SizedBox(
+                            width: 45,
+                          ),
                           const Icon(Icons.notifications,
                               color: appColor.primaryText),
-                          const SizedBox(width: 15,),
-
-
-                              ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child: CircleAvatar(backgroundColor: Colors.amberAccent, radius: 25, foregroundImage: NetworkImage("https://th.bing.com/th/id/R.01eb473c2e847284db9d7ccfb711b6de?rik=Dam3wkV8SszROw&riu=http%3a%2f%2fd263ao8qih4miy.cloudfront.net%2fwp-content%2fuploads%2f2017%2f06%2fSuspiciousPartner29-30-00282.jpg&ehk=9CVjvndW6EBhxZ58qoE%2fiUGyBo6pSWzvMSl93Qz38Vs%3d&risl=&pid=ImgRaw&r=0"),),
-                              )
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.amberAccent,
+                              radius: 25,
+                              foregroundImage: NetworkImage(
+                                  "https://th.bing.com/th/id/R.01eb473c2e847284db9d7ccfb711b6de?rik=Dam3wkV8SszROw&riu=http%3a%2f%2fd263ao8qih4miy.cloudfront.net%2fwp-content%2fuploads%2f2017%2f06%2fSuspiciousPartner29-30-00282.jpg&ehk=9CVjvndW6EBhxZ58qoE%2fiUGyBo6pSWzvMSl93Qz38Vs%3d&risl=&pid=ImgRaw&r=0"),
+                            ),
+                          )
                         ]),
                       ),
 
-
-                  //content isi page /screen
+                //content isi page /screen
                 Expanded(
                     child: Container(
-                  padding: const EdgeInsets.all(50),
+                  padding: !context.isPhone
+                      ? const EdgeInsets.all(50)
+                      : const EdgeInsets.all(20),
                   margin: !context.isPhone
                       ? const EdgeInsets.all(10)
                       : const EdgeInsets.all(0),
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: !context.isPhone
-                          ? BorderRadius.circular(50)
-                          : BorderRadius.circular(20)),
+                    color: Colors.white,
+                    borderRadius: !context.isPhone
+                        ? BorderRadius.circular(50)
+                        : BorderRadius.circular(30),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Task Management',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: appColor.primaryText,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Expanded(
+                        child: ListView.builder(
+                          itemCount: 8,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              margin: const EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(15),
+                              height: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: appColor.secondaryBg,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(25),
+                                        child: const CircleAvatar(
+                                          backgroundColor: Colors.amber,
+                                          radius: 20,
+                                          foregroundImage: NetworkImage(
+                                              'https://th.bing.com/th/id/R.01eb473c2e847284db9d7ccfb711b6de?rik=Dam3wkV8SszROw&riu=http%3a%2f%2fd263ao8qih4miy.cloudfront.net%2fwp-content%2fuploads%2f2017%2f06%2fSuspiciousPartner29-30-00282.jpg&ehk=9CVjvndW6EBhxZ58qoE%2fiUGyBo6pSWzvMSl93Qz38Vs%3d&risl=&pid=ImgRaw&r=0'),
+                                        ),
+                                      ),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(25),
+                                        child: const CircleAvatar(
+                                          backgroundColor: Colors.amber,
+                                          radius: 20,
+                                          foregroundImage: NetworkImage(
+                                              'https://th.bing.com/th/id/R.01eb473c2e847284db9d7ccfb711b6de?rik=Dam3wkV8SszROw&riu=http%3a%2f%2fd263ao8qih4miy.cloudfront.net%2fwp-content%2fuploads%2f2017%2f06%2fSuspiciousPartner29-30-00282.jpg&ehk=9CVjvndW6EBhxZ58qoE%2fiUGyBo6pSWzvMSl93Qz38Vs%3d&risl=&pid=ImgRaw&r=0'),
+                                        ),
+                                      ),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(25),
+                                        child: const CircleAvatar(
+                                          backgroundColor: Colors.amber,
+                                          radius: 20,
+                                          foregroundImage: NetworkImage(
+                                              'https://th.bing.com/th/id/R.01eb473c2e847284db9d7ccfb711b6de?rik=Dam3wkV8SszROw&riu=http%3a%2f%2fd263ao8qih4miy.cloudfront.net%2fwp-content%2fuploads%2f2017%2f06%2fSuspiciousPartner29-30-00282.jpg&ehk=9CVjvndW6EBhxZ58qoE%2fiUGyBo6pSWzvMSl93Qz38Vs%3d&risl=&pid=ImgRaw&r=0'),
+                                        ),
+                                      ),
+                                      const Spacer(),
+                                      Container(
+                                        height: 25,
+                                        width: 80,
+                                        color: appColor.primaryBg,
+                                        child: const Center(
+                                            child: Text(
+                                          '90%',
+                                          style: TextStyle(
+                                            color: appColor.primaryText,
+                                          ),
+                                        )),
+                                      ),
+                                    ],
+                                  ),
+                                  const Spacer(),
+                                  Container(
+                                    height: 25,
+                                    width: 80,
+                                    color: appColor.primaryBg,
+                                    child: const Center(
+                                        child: Text(
+                                      '9/10 Task',
+                                      style: TextStyle(
+                                        color: appColor.primaryText,
+                                      ),
+                                    )),
+                                  ),
+                                  const Text(
+                                    'Pemrograman Mobile (Flutter)',
+                                    style: TextStyle(
+                                        color: appColor.primaryText,
+                                        fontSize: 20),
+                                  ),
+                                  const Text(
+                                    'Tersisa 3 Hari lagi',
+                                    style: TextStyle(
+                                        color: appColor.primaryText,
+                                        fontSize: 15),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                        ),
+                      )
+                    ],
+                  ),
                 ))
               ],
             ),
           ),
         ],
+      ),
+      floatingActionButton: Align(
+      alignment: const Alignment(0.95, 0.95),
+        child: FloatingActionButton.extended(
+          
+          label: Text('Add Task'),
+          icon: const Icon(Icons.add),
+          onPressed: () {
+          Get.bottomSheet(
+          Container(
+          margin: context.isPhone ?  EdgeInsets.zero : const EdgeInsets.only(left: 100, right: 100),
+          height: Get.height,
+          decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)), color: Colors.white),
+          )
+          );
+          
+          },
+        ),
       ),
     );
   }
