@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "848007844737",
+    "project_id": "ven-app-task",
+    "storage_bucket": "ven-app-task.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848007844737:android:bc36cbd5b6a12ee68ace80",
+        "android_client_info": {
+          "package_name": "com.example.management_taks_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "848007844737-b38f90agu2hdoe7lkm5vho2cmhucdgl8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1BxkuIHxVJohxdihaxMkO49DNDbQ0mgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "848007844737-b38f90agu2hdoe7lkm5vho2cmhucdgl8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
