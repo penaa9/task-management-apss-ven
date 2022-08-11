@@ -116,7 +116,7 @@ class AuthController extends GetxController {
   var kataCari = [].obs;
   var hasilPencarian = [].obs;
   //vid15, data diperoleh dari inputan serach
-
+//addFriends controller
   void addFriends(String _emailFriends) async {
     CollectionReference friends = firestore.collection('friends');
 
