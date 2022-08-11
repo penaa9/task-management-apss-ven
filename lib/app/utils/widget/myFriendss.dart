@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:management_taks_apps/app/data/controller/auth_controller.dart';
 
 
 
@@ -8,76 +10,101 @@ import '../../routes/app_pages.dart';
 import '../style/appColor.dart';
 
 class MyFriends extends StatelessWidget {
-  const MyFriends({
-    Key? key,
-  }) : super(key: key);
+  final authCon = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                const Text(
-                  'My Friends',
-                  style: TextStyle(
-                    color: appColor.primaryText,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
-                const Spacer(),
-                GestureDetector(
-                  onTap: () => Get.toNamed(Routes.FRIEND),
-                  child: const Text(
-                    'More',
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  const Text(
+                    'My Friends',
                     style: TextStyle(
                       color: appColor.primaryText,
                       fontSize: 20,
                     ),
                   ),
-                ),
-                const Icon(
-                  Icons.arrow_right_sharp,
-                  color: appColor.primaryText,
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              height: 400,
-              child: GridView.builder(
-                shrinkWrap: true,
-                itemCount: 8,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: context.isPhone ? 2 : 3,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20),
-                itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(80),
-                        child: const Image(
-                          image: NetworkImage(
-                              'https://th.bing.com/th/id/R.01eb473c2e847284db9d7ccfb711b6de?rik=Dam3wkV8SszROw&riu=http%3a%2f%2fd263ao8qih4miy.cloudfront.net%2fwp-content%2fuploads%2f2017%2f06%2fSuspiciousPartner29-30-00282.jpg&ehk=9CVjvndW6EBhxZ58qoE%2fiUGyBo6pSWzvMSl93Qz38Vs%3d&risl=&pid=ImgRaw&r=0'),
-                     
-                        ),
+                  const Spacer(),
+                  GestureDetector(
+                    onTap: () => Get.toNamed(Routes.FRIEND),
+                    child: Text(
+                      'more',
+                      style: TextStyle(
+                        color: appColor.primaryText,
+                        fontSize: 15,
                       ),
-                      const Text(
-                        'Fitri',
-                        style: TextStyle(color: appColor.primaryText),
-                      )
-                    ],
-                  );
-                },
+                    ),
+                  ),
+                  const Icon(
+                    Icons.chevron_right_rounded,
+                    color: appColor.primaryText,
+                  ),
+                ],
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 15,
+              ),
+              SizedBox(
+                  height: 300,
+                  child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+                    stream: authCon.StreamFriends(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(child: CircularProgressIndicator());
+                      }
+                      var myFriends = (snapshot.data!.data()
+                          as Map<String, dynamic>)['emailFriends'] as List;
+
+                      return GridView.builder(
+                          shrinkWrap: true,
+                          // menghitung ada berapa banyak data di database
+                          itemCount: myFriends.length,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: 20,
+                                  mainAxisSpacing: 20),
+                          itemBuilder: (context, index) {
+                            return StreamBuilder<
+                                    DocumentSnapshot<Map<String, dynamic>>>(
+                                stream: authCon.StreamUsers(myFriends[index]),
+                                builder: (context, snapshot2) {
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return const Center(
+                                        child: CircularProgressIndicator());
+                                  }
+                                  //varabel data untuk email sama poto
+                                  var data = snapshot2.data!.data();
+                                  return Column(
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(90),
+                                        child: CircleAvatar(
+                                          backgroundColor: Colors.amber,
+                                          radius: 60,
+                                          foregroundImage: NetworkImage(
+                                              data!['photo']),
+                                        ),
+                                      ),
+                                      Text(
+                                        data['name'],
+                                        style: TextStyle(
+                                            color: appColor.primaryText),
+                                      ),
+                                    ],
+                                  );
+                                });
+                          });
+                    },
+                  ))
+            ],
+          ),
         ),
       ),
     );

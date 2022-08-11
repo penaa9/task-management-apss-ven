@@ -124,9 +124,9 @@ class ProfileView extends GetView<ProfileController> {
                            const ProfileWidget(),
                           
                             SizedBox(
-                              height: Get.height * 0.4,
-                              //mytask yang di extract  di utils
-                              child: const MyTask(),
+                              height: Get.height * 0.4,       
+                                  // berhubungan dengan data tidak ada const harusnya
+                              child:  MyTask(),
                             ),
                           ],
                         )))
