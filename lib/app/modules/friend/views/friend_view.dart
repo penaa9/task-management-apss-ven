@@ -14,7 +14,6 @@ import 'package:management_taks_apps/app/utils/style/appColor.dart';
 class FriendView extends GetView<FriendController> {
   final GlobalKey<ScaffoldState> _drawwerKey = GlobalKey();
   final authCon = Get.find<AuthController>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,6 +96,7 @@ class FriendView extends GetView<FriendController> {
                                   // inputan serach
                                   context.isPhone
                                       ? TextField(
+                                      //ketika tampilam mobile phone device
                                           //akasi
                                           onChanged: (value) =>
                                               authCon.searchFriends(value),
@@ -132,6 +132,7 @@ class FriendView extends GetView<FriendController> {
                         ),
                   //content / isipage /screen
                   Expanded(
+                  //auto berjarak margin
                     child: Container(
                       padding: !context.isPhone
                           ? const EdgeInsets.all(30)
@@ -155,8 +156,8 @@ class FriendView extends GetView<FriendController> {
                                         color: appColor.primaryText,
                                       ),
                                     ),
-                                    peopleYouMayKnow(),
-                                    myFriends(),
+                                    // peopleYouMayKnow(),
+                                    MyFriends(),
                                   ])
                             : ListView.builder(
                                 padding: EdgeInsets.all(5),
