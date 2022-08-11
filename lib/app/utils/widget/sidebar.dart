@@ -44,7 +44,7 @@ class SideBar extends StatelessWidget {
                           children: [
                             Icon(
                               Get.currentRoute == '/home' ?
-                              Icons.dashboard: Icons.dashboard_outlined, size: 30, color: Colors.grey,),
+                              Icons.dashboard: Icons.home, size: 30, color: Colors.grey,),
                            
     
                           ],
@@ -79,7 +79,7 @@ class SideBar extends StatelessWidget {
                           children: [
                             Icon(
                               Get.currentRoute == '/task' ?
-                              Icons.dashboard: Icons.dashboard_outlined, size: 30, color: Colors.grey,),
+                              Icons.dashboard: Icons.book, size: 30, color: Colors.grey,),
                            
     
                           ],
@@ -87,7 +87,7 @@ class SideBar extends StatelessWidget {
                         
                       ), 
                       SizedBox(height: 10,),
-                      Text("Task")
+                      Text("Tasks")
     
                     ],
                   ),
@@ -115,7 +115,7 @@ class SideBar extends StatelessWidget {
                           children: [
                             Icon(
                               Get.currentRoute == '/friend' ?
-                              Icons.class_sharp: Icons.class_outlined, size: 30, color: Colors.grey,),
+                              Icons.class_sharp: Icons.person_add_alt, size: 30, color: Colors.grey,),
                            
     
                           ],
