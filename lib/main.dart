@@ -14,20 +14,22 @@ import 'firebase_options.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    name: 'task Venn management app',
     options: DefaultFirebaseOptions.currentPlatform,
   );
   Get.put(AuthController(), permanent: true);
-  runApp(StreamBuilder<User?>(builder: (context, snapshot) {
-    if (snapshot.connectionState == ConnectionState.waiting) {
-      return const Center(child: CircularProgressIndicator());
-    }
+  runApp(
+    StreamBuilder<User?>(
+    stream: FirebaseAuth.instance.authStateChanges(),
+    builder: (context, snapshot) {
+      if(snapshot.connectionState == ConnectionState.waiting) {
+        return const Center(child: CircularProgressIndicator());
+      }
     return GetMaterialApp(
-      title: "My Task Management",
-      initialRoute: snapshot.data != null ? Routes.HOME : Routes.LOGIN,
-      getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
-      scrollBehavior: MyCustomScrollBehavior(),
+      title: "Vena Task App",
+      initialRoute: snapshot.data != null? Routes.HOME : Routes.LOGIN,
+      getPages: AppPages.routes,
     );
-  }));
+    },
+    ));
 }
