@@ -124,8 +124,9 @@ class TaskView extends GetView<TaskController> {
           // ketika ditekan
             addEditTask(context: context, type: 'Add', docId: '');
           },
-          label: const Text("Add Task"),
+          label: const Text("Add Task",),
           icon: const Icon(Icons.add),
+          
         ),
       ),
     );
