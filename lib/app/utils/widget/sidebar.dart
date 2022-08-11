@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../routes/app_pages.dart';
+import '../style/appColor.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({
@@ -15,7 +16,7 @@ class SideBar extends StatelessWidget {
       elevation: 1,
       child: Container(
         height: Get.height,
-      color: Colors.blue[100],
+      color: appColor.primaryBg,
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

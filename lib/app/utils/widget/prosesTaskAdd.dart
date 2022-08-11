@@ -34,7 +34,7 @@ final authCon = Get.find<AuthController>();
                 Text(
                   '$type Task',
                   style: TextStyle(
-                      color: appColor.primaryText,
+                      color: Colors.blueAccent,
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
@@ -49,7 +49,7 @@ final authCon = Get.find<AuthController>();
                     //validasi jika kosong pada setiap inputan
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Cannot be Empty';
+                        return 'Harus di Isi';
                       }
                       return null;
                     }),
@@ -70,7 +70,7 @@ final authCon = Get.find<AuthController>();
 
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Cannot be Empty';
+                        return 'Harus di Isi';
                       }
                       return null;
                     }),
@@ -91,7 +91,7 @@ final authCon = Get.find<AuthController>();
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Cannot be Empty';
+                        return 'Harus di Isi';
                       }
                       return null;
                     }),

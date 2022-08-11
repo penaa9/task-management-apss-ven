@@ -121,7 +121,7 @@ class FriendView extends GetView<FriendController> {
                                             ),
                                             prefixIcon:
                                                 const Icon(Icons.search),
-                                            hintText: 'Cari Disini',
+                                            hintText: 'Cari Temanmu !',
                                           ),
                                         )
                                       : const SizedBox(),

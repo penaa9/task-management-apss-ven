@@ -72,13 +72,7 @@ class MyTask extends StatelessWidget {
                                         label: const Text('Update'),
                                       ),
                                       //delete
-                                      TextButton.icon(
-                                        onPressed: () {
-                                          authCon.deleteTask(taskId[index]);
-                                        },
-                                        icon: const Icon(Icons.delete),
-                                        label: const Text('Delete'),
-                                      )
+                                    
                                     ],
                                   ));
                               // addEditTask(
